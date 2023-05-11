@@ -8,9 +8,6 @@ const { userRoute } = require("./route/user.route");
 const { apiSaveRoute } = require("./route/apiSave.route");
 const { authenticate } = require("./middleware/authenticate.middleware");
 
-
-
-
 const app = express();
 
 app.use(cors());

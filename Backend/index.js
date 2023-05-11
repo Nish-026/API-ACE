@@ -7,7 +7,7 @@ const { connection } = require("./config/config");
 const { userRoute } = require("./route/user.route");
 const { apiSaveRoute } = require("./route/apiSave.route");
 const { authenticate } = require("./middleware/authenticate.middleware");
-
+const {authRoute}= require("./route/auth.route")
 const app = express();
 
 app.use(cors());
@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(userRoute);
+app.use("/auth", authRoute);
 app.use(authenticate);
 app.use(apiSaveRoute);
 

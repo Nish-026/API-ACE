@@ -74,7 +74,7 @@ button {
   border-radius: 5px;
 }
 
-.gbtn {
+#google_button {
   color: white;
   background-color: rgb(57, 127, 241);
   border-radius: 5px;
@@ -107,7 +107,7 @@ a {
   font-weight: 600;
 }
 
-.gitbtn{
+#git_button{
   background-color: black;
   color: white;
   border-radius: 5px;
@@ -117,11 +117,11 @@ a {
   background-color: var(--hoverorange);
 }
 
-.gbtn:hover {
+#google_button:hover {
   background-color: rgb(0, 61, 160);
 }
 
-.gitbtn:hover{
+#git_button:hover{
   background-color: rgb(41, 41, 41);
 }
 

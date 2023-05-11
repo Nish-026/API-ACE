@@ -137,65 +137,69 @@ userRoute.patch("/reset", async (req, res) => {
   }
 });
 
-userRoute.get("/auth/github", async (req, res) => {
-  const { code } = req.query;
-  const accessToken = await fetch(
-    "https://github.com/login/oauth/access_token",
-    {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        client_id: process.env.client_id,
-        client_secret: process.env.client_secret,
-        code,
-      }),
-    }
-  ).then((res) => res.json());
-  console.log(accessToken);
-  const access_token = accessToken.access_token;
-  const userDetails = await fetch("https://api.github.com/user", {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  }).then((res) => res.json());
-  const name = userDetails.name;
-  const email = userDetails.email;
-  const user_data = {
-    name,
-    email,
-  }
-  const user = new userModel(user_data);
-  console.log(user);
-  await user.save();
-  res.send("welcome"); ///// redirect url
-});
+// userRoute.get("/auth/github", async (req, res) => {
+//   const { code } = req.query;
+//   const accessToken = await fetch(
+//     "https://github.com/login/oauth/access_token",
+//     {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "content-type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         client_id: process.env.client_id,
+//         client_secret: process.env.client_secret,
+//         code,
+//       }),
+//     }
+//   ).then((res) => res.json());
+//   console.log(accessToken);
+//   const access_token = accessToken.access_token;
+//   const userDetails = await fetch("https://api.github.com/user", {
+//     headers: {
+//       Authorization: `Bearer ${access_token}`,
+//     },
+//   }).then((res) => res.json());
+//   const name = userDetails.name;
+//   const email = userDetails.email;
+//   const user_data = {
+//     name,
+//     email,
+//   }
+//   const user = new userModel(user_data);
+//   console.log(user);
+//   await user.save();
+//   res.send("welcome"); ///// redirect url
+// });
 
-userRoute.get(
-  "/auth/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
+// userRoute.get(
+//   "/auth/google",
+//   passport.authenticate("google", { scope: ["profile", "email"] })
+// );
 
-userRoute.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    failureRedirect: "/login",
-    session: false,
-  }),
-  // Successful authentication, redirect home.
-  async function (req, res) {
-    // Successful authentication, redirect home.
-    console.log(req.user);
-    const name = req.user.name;
-    const email = req.user.email;
-    const user_data = {
-      name,
-      email,
-    };
-    res.send("welcome"); /// redirect URL
-  }
-);
+// userRoute.get(
+//   "/auth/google/callback",
+//   passport.authenticate("google", {
+//     failureRedirect: "/login",
+//     session: false,
+//   }),
+//   // Successful authentication, redirect home.
+//   async function (req, res) {
+//     // Successful authentication, redirect home.
+//     console.log(req.user);
+//     let udata = await userModel.findOne({ email });
+//     if (udata) {
+//         return cb(null, udata);
+//     }
+//     const name = req.user.name;
+//     const email = req.user.email;
+//     const user_data = {
+//       name,
+//       email,
+//     };
+//     res.send("welcome"); /// redirect URL
+//   }
+// );
 
 module.exports = { userRoute };

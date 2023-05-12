@@ -28,7 +28,7 @@ authRoute.get(
         const token = jwt.sign({
             userID: user._id
         }, 'token', { expiresIn: '24hr' });
-
+        console.log(token);
         res.send(`welcome`); // chnge the link to frontend
     }
 );
@@ -81,7 +81,7 @@ authRoute.get(
         const token = jwt.sign({
             userID: user._id
         }, 'token', { expiresIn: '24hr' });
-
+        console.log(token);
         res.send(`welcome`);
     }
 );
@@ -101,13 +101,13 @@ passportGithub.use(
         async function (request, accessToken, refreshToken, profile, done) {
             let email = profile.emails[0].value;
 
-            let udata = await UserModel.findOne({ email });
+            let udata = await userModel.findOne({ email });
             if (udata) {
                 return done(null, udata);
             }
             let name = profile._json.name;
 
-            const user = new UserModel({
+            const user = new userModel({
                 name,
                 email,
                 pass: uuidv4(),
@@ -117,6 +117,8 @@ passportGithub.use(
         }
     )
 );
+
+
 
 module.exports = {
     authRoute

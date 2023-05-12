@@ -11,7 +11,7 @@ if (username == null) {
   // signin
   document.querySelector(".signin_btn").addEventListener("click", () => {
     console.log("yes");
-    window.location.href = "./signin_signup/login.html";
+    window.location.href = "./login.html";
   });
 } else {
   sign_in_div.innerHTML = `<button style="cursor: pointer" id="logout_btn">
@@ -29,9 +29,9 @@ document.querySelector("#logo_img").addEventListener("click", () => {
   window.location.href = "index.html";
 });
 document.querySelector("#explore").addEventListener("click", () => {
-  window.location.href = "./explore/explore.html";
+  window.location.href = "explore.html";
 });
 
 document.querySelector("#workspace_btn").addEventListener("click", () => {
-  window.location.href = "./homepage/homepage.html";
+  window.location.href = "homepage.html";
 });

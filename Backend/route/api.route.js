@@ -1,9 +1,9 @@
 const express = require("express");
-let apiSaveRoute = express.Router();
+let apiRoute = express.Router();
 
 const { apiModel } = require("../model/api_model");
 
-apiSaveRoute.get("/getUserApi/:id", async (req, res) => {
+apiRoute.get("/getUserApi/:id", async (req, res) => {
   let id = req.params.id;
   try {
     let userApiData = await apiModel.find({
@@ -16,7 +16,7 @@ apiSaveRoute.get("/getUserApi/:id", async (req, res) => {
   }
 });
 
-apiSaveRoute.post("/saveUserApi", async (req, res) => {
+apiRoute.post("/saveUserApi", async (req, res) => {
   let payload = req.body;
   try {
     let userApi = await apiModel(payload);
@@ -28,4 +28,15 @@ apiSaveRoute.post("/saveUserApi", async (req, res) => {
   }
 });
 
-module.exports = { apiSaveRoute };
+apiRoute.delete("/delete/:id",async(req,res)=>{
+  let id= req.params.id;
+  try{
+    await apiModel.findByIdAndDelete(id)
+    res.send({message:"Api Removed"})
+  }catch(err){
+    res.send(err.message)
+  }
+  
+})
+
+module.exports = { apiRoute };

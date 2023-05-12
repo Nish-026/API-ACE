@@ -1,96 +1,7 @@
 function explore() {
   window.location.href = "explore.html";
 }
-function myTheme() {
-  const toggle = document.getElementById("darkmode-Toggle");
-  const body = document.getElementById("main");
-  const buttons = document.getElementsByTagName("button");
-  const h = document.getElementsByTagName("h5");
-  const sign_in_btn = document.getElementById("signin_btn");
-  const mb4 = document.getElementById("mb-4");
-  const mb5 = document.getElementById("mb-5");
-  const col_btn1 = document.getElementById("collapse_btn1");
-  const col_btn2 = document.getElementById("collapse_btn2");
-  const h1 = document.getElementsByTagName("h1");
-  const navbar = document.getElementById("Navbar");
-  const h5 = document.getElementsByTagName("h4");
-  const p = document.getElementsByTagName("p");
-  const l = document.getElementsByTagName("li");
-  const u = document.getElementsByTagName("ul");
-  const second_row = document.getElementById("second_row");
-  const sixth_row = document.getElementById("sixth_row");
-  const f_row = document.getElementById("Fourth_row");
-  if (toggle.checked == true) {
-    body.style.background = "#4D4D4D";
-    second_row.style.background = "#4D4D4D";
-    sixth_row.style.background = "#4D4D4D";
-    f_row.style.background = "#4D4D4D";
-    navbar.classList.add("bg-dark");
-    navbar.classList.remove("bg-white");
-    col_btn2.style.background = "#4D4D4D";
-    col_btn1.style.background = "#4D4D4D";
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].style.background = "#4D4D4D";
-      buttons[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < h.length; i++) {
-      h[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < h1.length; i++) {
-      h1[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < h5.length; i++) {
-      h5[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < p.length; i++) {
-      p[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < l.length; i++) {
-      l[i].style.color = "#FFFFFF";
-    }
-    for (let i = 0; i < u.length; i++) {
-      u[i].style.color = "#FFFFFF";
-    }
-  } else {
-    body.style.background = "#FFFFFF";
-    second_row.style.background = "#F9F9F9";
-    sixth_row.style.background = "#F9F9F9";
-    navbar.classList.add("bg-white");
-    navbar.classList.remove("bg-dark");
-    f_row.style.background = "#F9F9F9";
 
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].style.background = "#FFFFFF";
-      buttons[i].style.color = "black";
-    }
-    sign_in_btn.style.background = "#fb9820";
-
-    mb4.style.background = "#fb9820";
-    mb5.style.background = "#fb9820";
-    col_btn2.style.background = "#fb9820";
-    col_btn1.style.background = "#fb9820";
-    col_btn2.style.color = "#FFFFFF";
-    col_btn1.style.color = "#FFFFFF";
-    for (let i = 0; i < h.length; i++) {
-      h[i].style.color = "#4D4D4D";
-    }
-    for (let i = 0; i < h1.length; i++) {
-      h1[i].style.color = "#4D4D4D";
-    }
-    for (let i = 0; i < h5.length; i++) {
-      h5[i].style.color = "#4D4D4D";
-    }
-    for (let i = 0; i < p.length; i++) {
-      p[i].style.color = "#4D4D4D";
-    }
-    for (let i = 0; i < l.length; i++) {
-      l[i].style.color = "#4D4D4D";
-    }
-    for (let i = 0; i < u.length; i++) {
-      u[i].style.color = "#4D4D4D";
-    }
-  }
-}
 
 const hamburger = document.querySelector(".hamburger");
 const navmenu = document.querySelector(".container-fluid");
@@ -172,3 +83,16 @@ function border_none() {
   console.log("hi");
   button.style.borderColor = "color | transparent | inherit | initial";
 }
+
+
+// --------------------------- setting the name in navbar using google oauth / github oauth ------------------------------------------//
+
+// const urlParams = new URLSearchParams(window.location.search);
+// const username = urlParams.get('username');
+// console.log(username);
+// if (username) {
+//   localStorage.setItem('username', username);
+// }
+
+// --------------------------- setting the name in navbar using normal sign in ------------------------//
+

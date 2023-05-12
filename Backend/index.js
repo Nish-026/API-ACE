@@ -5,7 +5,7 @@ require("dotenv").config();
 const port = process.env.port;
 const { connection } = require("./config/config");
 const { userRoute } = require("./route/user.route");
-const { apiSaveRoute } = require("./route/apiSave.route");
+const { apiRoute } = require("./route/api.route");
 const { authenticate } = require("./middleware/authenticate.middleware");
 const {authRoute}= require("./route/auth.route")
 const app = express();
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 app.use(userRoute);
 app.use("/auth", authRoute);
 app.use(authenticate);
-app.use(apiSaveRoute);
+app.use(apiRoute);
 
 app.listen(port, async () => {
   try {
@@ -28,7 +28,6 @@ app.listen(port, async () => {
     console.log("db connected");
   } catch (error) {
     console.log(error);
-    console.log("db not connected something went wrong");
   }
-  console.log("listning at port", port);
+  console.log("Server is running at port:", port);
 });

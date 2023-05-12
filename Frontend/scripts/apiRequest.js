@@ -209,11 +209,11 @@ sendBtn.addEventListener("click", (e) => {
   var keys = [];
   var headersData = [];
   keyValueObj = {};
-  $($rows.shift())
-    .find("th:not(:empty):not([data-attr-ignore])")
-    .each(function () {
-      keys.push($(this).text().toLowerCase());
-    });
+  // $($rows.shift())
+  //   .find("th:not(:empty):not([data-attr-ignore])")
+  //   .each(function () {
+  //     keys.push($(this).text().toLowerCase());
+  //   });
   $rows.each(function () {
     var $td = $(this).find("td");
     var h = {};
@@ -403,8 +403,8 @@ saveApiBtn.addEventListener("click", async () => {
     removeEventListener("beforeunload", beforeUnloadListener, {
       capture: true,
     });
-    alert("saved check it");
+    Swal.fire("Your current session is saved in your workspace🤩")
   } else {
-    alert("send any url first to same the data");
+    Swal.fire("Please send the API request to save it 😟")
   }
 });

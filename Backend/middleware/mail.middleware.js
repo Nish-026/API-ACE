@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config()
 const sendMail = async (subject, body, userMail) => {
   try {
     let testAccount = await nodemailer.createTestAccount();
@@ -9,8 +10,8 @@ const sendMail = async (subject, body, userMail) => {
       host: 'smtp-relay.sendinblue.com',
       port: 587,
       auth: {
-        user: 'nishtha.kashyap2608@gmail.com',
-        pass: '3cmrQRCBhPHby0wp'
+        user: process.env.NODEMAILER.USERNAME,
+        pass: process.env.NODEMAILER.PASSWORD
       },
       tls: {
         rejectUnauthorized: false

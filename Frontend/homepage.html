@@ -19,7 +19,7 @@
     <nav id="Navbar" class="navbar py-0 navbar-expand-lg navbar-white bg-white">
       <div class="container-fluid">
         <div id="img_div">
-          <a class="navbar-brand" href="#"><img id="logo_img" src="../images/API ACE LOGO.png" /></a>
+          <a class="navbar-brand" href="#"><img id="logo_img" src="./images/API ACE LOGO.png" /></a>
         </div>
         <div id="first_div">
           <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
@@ -76,33 +76,6 @@
         <div id="Darkmode_div">
           <div id="sign_in_div">
           </div>
-          <!-- <div id="Darkmode">
-              <input type="checkbox" id="darkmode-Toggle" onclick="myTheme()" />
-              <label for="darkmode-Toggle" id="Label">
-                <svg viewBox="0 0 24 24" class="sun" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <g id="Environment / Sun">
-                      <path id="Vector"
-                        d="M12 4V2M12 20V22M6.41421 6.41421L5 5M17.728 17.728L19.1422 19.1422M4 12H2M20 12H22M17.7285 6.41421L19.1427 5M6.4147 17.728L5.00049 19.1422M12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 14.7614 14.7614 17 12 17Z"
-                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                  </g>
-                </svg>
-                <svg viewBox="0 0 24 24" class="moon" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <g id="Environment / Moon">
-                      <path id="Vector"
-                        d="M9 6C9 10.9706 13.0294 15 18 15C18.9093 15 19.787 14.8655 20.6144 14.6147C19.4943 18.3103 16.0613 20.9999 12 20.9999C7.02944 20.9999 3 16.9707 3 12.0001C3 7.93883 5.69007 4.50583 9.38561 3.38574C9.13484 4.21311 9 5.09074 9 6Z"
-                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                  </g>
-                </svg>
-              </label>
-            </div> -->
         </div>
       </div>
       <div class="hamburger">
@@ -115,11 +88,11 @@
   <div id="main">
     <div id="main_body_div">
       <div id="displayUserApi">
-        <div><h2 id="saved_api">Saved Api Data</h2></div>
+        <div id="welcome_div"><h5 id="saved_api"><span id="name_span"></span>Save your work Here!😁</h5></div>
         
       </div>
       <div>
-        <div onclick="redirect()">
+        <div id="new_req">
           <svg class="API" style="height: 80%; width: 70" viewBox="0 0 48 48" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <rect width="48" height="48" fill="white" fill-opacity="0.01" />
@@ -135,24 +108,6 @@
             <path d="M16 25L20 21" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
           <h5>New API</h5>
-        </div>
-        <div onclick="redirect()">
-          <svg class="Req" style="height: 80%; width: 70" viewBox="0 -0.5 21 21" version="1.1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>plus [#1512]</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Dribbble-Light-Preview" transform="translate(-379.000000, -240.000000)" fill="#000000">
-                <g id="icons" transform="translate(56.000000, 160.000000)">
-                  <polygon id="plus-[#1512]"
-                    points="344 89 344 91 334.55 91 334.55 100 332.45 100 332.45 91 323 91 323 89 332.45 89 332.45 80 334.55 80 334.55 89">
-                  </polygon>
-                </g>
-              </g>
-            </g>
-          </svg>
-          <h5>New Request</h5>
         </div>
       </div>
     </div>
@@ -377,7 +332,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"></script>
-  <script src="./scripts/index.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

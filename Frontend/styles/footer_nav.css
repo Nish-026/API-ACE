@@ -5,8 +5,8 @@
   border-radius: 2px;
 }
 #Navbar {
-  position: fixed;
-  /* border: 1px solid green; */
+  /* position: fixed; */
+  border: 1px solid green;
   z-index: 9000;
   width: 100%;
   align-items: center;
@@ -135,7 +135,7 @@
 #Label:active:after {
   /* width: 50px;  */
 }
-#main {
+#main{
   background: #ffffff;
   transition: 0.3s;
   z-index: -1;

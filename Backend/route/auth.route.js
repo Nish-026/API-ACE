@@ -25,11 +25,12 @@ authRoute.get(
     }),
     function (req, res) {
         let user = req.user;
+        // console.log(user);
         const token = jwt.sign({
-            userID: user._id
+            userID: user._id,
+            username:user.name
         }, 'token', { expiresIn: '24hr' });
-        console.log(token);
-        res.redirect(`https://apiwizard.netlify.app/index.html`); // chnge the link to frontend
+        res.redirect(`https://apiwizard.netlify.app/index.html?username=${user.name}`); // chnge the link to frontend
     }
 );
 
@@ -47,11 +48,12 @@ passport.use(
         },
         async function (request, accessToken, refreshToken, profile, cb) {
             let email = profile._json.email;
+            let name = profile._json.name;
             let udata = await userModel.findOne({ email });
             if (udata) {
                 return cb(null, udata);
             }
-            let name = profile._json.name;
+
 
             const user = new UserModel({
                 name,

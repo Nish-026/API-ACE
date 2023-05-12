@@ -29,7 +29,7 @@ authRoute.get(
             userID: user._id
         }, 'token', { expiresIn: '24hr' });
         console.log(token);
-        res.send(`welcome`); // chnge the link to frontend
+        res.redirect(`https://apiwizard.netlify.app/index.html`); // chnge the link to frontend
     }
 );
 
@@ -82,7 +82,7 @@ authRoute.get(
             userID: user._id
         }, 'token', { expiresIn: '24hr' });
         console.log(token);
-        res.send(`welcome`);
+        res.redirect(`https://apiwizard.netlify.app/index.html`);
     }
 );
 

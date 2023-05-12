@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 require("dotenv").config();
+const { sendMail } = require("../middlewares/mail");
 let userRoute = express.Router();
 require("dotenv").config();
 const { userModel } = require("../model/user.model");
@@ -27,6 +28,18 @@ userRoute.post("/user/signup", async (req, res) => {
           password: hash,
         });
         await userRegisterData.save();
+        let sub = `Welcome to API ACE`;
+        let body = `Dear ${name},
+
+                This is Greeting from API ACE, Welcomes you to our app! We are thrilled to have you join our community and we hope that you will find our app to be a valuable tool for your needs.
+                
+                Our app has been designed to be user-friendly and intuitive, with a range of features and functions.
+                
+                Thank you again for choosing API ACE and we hope you enjoy using our app!
+                
+                Best regards,
+                API ACE`;
+        sendMail(sub, body, email);
         res.send("user registered");
       }
     });
@@ -89,9 +102,9 @@ userRoute.post("/otp", async (req, res) => {
     const userData = await userModel.find({ email });
     if (userData.length > 0) {
       let otp = Math.floor(Math.random() * 9000 + 1000);
-      // let sub = `OTP for resetting the API ACE Password`;
-      // let body = `This is Your OTP - ${otp} for resetting the API ACE password, Keep it confedential.`;
-      // sendMail(sub, body, email);
+      let sub = `OTP for resetting the API ACE Password`;
+      let body = `This is Your OTP - ${otp} for resetting the API ACE password, Keep it confedential.`;
+      sendMail(sub, body, email);
       res.send({
         ok: true,
         message: otp,

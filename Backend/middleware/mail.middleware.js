@@ -1,19 +1,23 @@
 const nodemailer = require("nodemailer");
-
 const sendMail = async (subject, body, userMail) => {
   try {
-    console.log("working");
     let testAccount = await nodemailer.createTestAccount();
-    let transporter = nodemailer.createTransport({
-      host: "smtp-relay.sendinblue.com",
+
+
+
+    const transporter = nodemailer.createTransport({
+      host: 'smtp-relay.sendinblue.com',
       port: 587,
       auth: {
-        user: "md.faizan9t9@gmail.com",
-        pass: "DMdACXsfZN8GU3ja",
+        user: 'nishtha.kashyap2608@gmail.com',
+        pass: '3cmrQRCBhPHby0wp'
       },
+      tls: {
+        rejectUnauthorized: false
+      }
     });
     let info = await transporter.sendMail({
-      from: '"API ACE" <api_ace@mail.com>',
+      from: 'api-ace@mail.com',
       to: userMail,
       subject: subject,
       text: body,
@@ -21,6 +25,7 @@ const sendMail = async (subject, body, userMail) => {
     });
     console.log("Message sent: %s", info.messageId);
   } catch (error) {
+    console.log("mail not working")
     console.log(error)
   }
 };

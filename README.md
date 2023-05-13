@@ -7,7 +7,6 @@ The API ACE is the foundational tool of Postman, and it enables you to easily ex
 
 ## Authors
 
-- [Faizain]
 - [Nishtha]
 - [Punit]
 - [Tigmanshu]

@@ -22,6 +22,7 @@ app.use("/auth", authRoute);
 app.use(authenticate);
 app.use(apiRoute);
 
+
 app.listen(port, async () => {
   try {
     await connection;

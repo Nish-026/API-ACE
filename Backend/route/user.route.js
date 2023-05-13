@@ -9,7 +9,6 @@ require("dotenv").config();
 const { userModel } = require("../model/user.model");
 const passport = require("../config/google_oauth");
 
-
 userRoute.post("/user/signup", async (req, res) => {
   const { name, email, password } = req.body;
   let userData = await userModel.find({ email });

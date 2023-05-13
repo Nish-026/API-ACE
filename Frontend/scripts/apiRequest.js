@@ -209,11 +209,11 @@ sendBtn.addEventListener("click", (e) => {
   var keys = [];
   var headersData = [];
   keyValueObj = {};
-  // $($rows.shift())
-  //   .find("th:not(:empty):not([data-attr-ignore])")
-  //   .each(function () {
-  //     keys.push($(this).text().toLowerCase());
-  //   });
+  $($rows.shift())
+    .find("th:not(:empty):not([data-attr-ignore])")
+    .each(function () {
+      keys.push($(this).text().toLowerCase());
+    });
   $rows.each(function () {
     var $td = $(this).find("td");
     var h = {};

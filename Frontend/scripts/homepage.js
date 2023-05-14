@@ -24,7 +24,7 @@ function logout() {
 
 async function getApiData() {
   fetchData = await fetch(
-    `http://localhost:4500/getUserApi/${localStorage.getItem("userID")}`,
+    `http://localhost:4500/Api/getUserApi/${localStorage.getItem("userID")}`,
     {
       method: "GET",
       headers: {
@@ -73,7 +73,7 @@ function displayApi(data) {
 
 async function remove_api(ID) {
   fetchData = await fetch(
-    `http://localhost:4500/delete/${ID}`,
+    `http://localhost:4500/Api/delete/${ID}`,
     {
       method: "DELETE",
       headers: {

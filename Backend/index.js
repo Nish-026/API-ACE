@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 app.use(userRoute);
 app.use("/auth", authRoute);
 app.use(authenticate);
-app.use(apiRoute);
+app.use("/Api",apiRoute);
 
 
 app.listen(port, async () => {

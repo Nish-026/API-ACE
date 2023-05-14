@@ -391,7 +391,7 @@ saveApiBtn.addEventListener("click", async () => {
     url: url,
   };
   if (method || url) {
-    fetchURL = await fetch("http://localhost:4500/saveUserApi", {
+    fetchURL = await fetch("http://localhost:4500/Api/saveUserApi", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

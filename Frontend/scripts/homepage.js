@@ -1,3 +1,5 @@
+
+// let username= localStorage.getItem("userID");
 let new_req = document.getElementById("new_req");
 new_req.addEventListener("click", () => {
   console.log("hi");
@@ -5,16 +7,16 @@ new_req.addEventListener("click", () => {
 
 })
 
+
 let name_span= document.getElementById("name_span");
 let welcome_div=document.getElementById("welcome_div")
-name_span.innerText=localStorage.getItem("username");
+name_span.innerText=localStorage.getItem("username")+",Save your work Here!😁";
 welcome_div.append(name_span);
 
 
-// function logout() {
-//   console.log("hi");
-//   window.location.href = "index.html"; /// file name to be redirected
-// }
+function logout() {
+  window.location.href = "index.html"; /// file name to be redirected
+}
 
 
 
@@ -40,7 +42,7 @@ async function getApiData() {
   }
 }
 getApiData();
-// let username = localStorage.getItem("username");
+
 let displayUserApi = document.querySelector("#displayUserApi");
 function displayApi(data) {
   let apiArr = data.map((element,index) => {

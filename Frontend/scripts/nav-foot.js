@@ -19,9 +19,8 @@ if (username == null) {
               </button>`;
   // logout function
   document.querySelector("#logout_btn").addEventListener("click", () => {
-    console.log("yes");
     localStorage.setItem("username", null);
-    window.location.reload();
+    window.location.href = "index.html";
   });
 }
 
@@ -32,6 +31,15 @@ document.querySelector("#explore").addEventListener("click", () => {
   window.location.href = "explore.html";
 });
 
-document.querySelector("#workspace_btn").addEventListener("click", () => {
-  window.location.href = "homepage.html";
-});
+
+let workspace_button= document.getElementById("workspace_btn")
+
+workspace_button.addEventListener("click",()=>{
+  if(username!=null){
+    console.log("hi")
+    window.location.href= "homepage.html"
+  }else{
+    Swal.fire("Please Login to get to your workspace🤗")
+  }
+  
+})

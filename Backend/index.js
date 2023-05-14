@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
   res.send("welcome to apiace");
 });
 
+
+
+
 app.use(userRoute);
 app.use("/auth", authRoute);
 app.use(authenticate);

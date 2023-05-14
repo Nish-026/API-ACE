@@ -209,11 +209,11 @@ sendBtn.addEventListener("click", (e) => {
   var keys = [];
   var headersData = [];
   keyValueObj = {};
-  $($rows.shift())
-    .find("th:not(:empty):not([data-attr-ignore])")
-    .each(function () {
-      keys.push($(this).text().toLowerCase());
-    });
+  // $($rows.shift())
+  //   .find("th:not(:empty):not([data-attr-ignore])")
+  //   .each(function () {
+  //     keys.push($(this).text().toLowerCase());
+  //   });
   $rows.each(function () {
     var $td = $(this).find("td");
     var h = {};
@@ -248,23 +248,22 @@ sendBtn.addEventListener("click", (e) => {
     }
 
     if (isJson(jsonData) === false) {
-      alert("Invalid body type or Invalid JSON type ❌");
+      Swal.fire("Invalid body type or Invalid JSON type ❌");
     }
 
     jsonData = JSON.parse(document.getElementById("requestBody").value);
 
     if (typeof jsonData !== "object" || Array.isArray(jsonData)) {
       jsonData = [];
-      alert("Invalid body type or Invalid JSON type ❌");
+      Swal.fire("Invalid body type or Invalid JSON type ❌");
     } else {
       jsonData = `${document.getElementById("requestBody").value}`;
-      console.log(jsonData);
     }
   }
 
   // sending data to crud function
   if (url == "") {
-    alert("please provide URL");
+    Swal.fire("please provide URL");
   } else {
     crudFunction(method, url);
   }

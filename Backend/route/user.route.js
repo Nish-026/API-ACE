@@ -5,10 +5,10 @@ const fs = require("fs");
 require("dotenv").config();
 const { sendMail } = require("../middleware/mail.middleware");
 let userRoute = express.Router();
-require("dotenv").config();
 const { userModel } = require("../model/user.model");
 const passport = require("../config/google_oauth");
-
+const saltRounds=8
+const salt = bcrypt.genSaltSync(saltRounds);
 userRoute.post("/user/signup", async (req, res) => {
   const { name, email, password } = req.body;
   let userData = await userModel.find({ email });
@@ -16,9 +16,9 @@ userRoute.post("/user/signup", async (req, res) => {
     res.status(400);
     res.send("user already exists");
   } else {
-    bcrypt.hash(password, +process.env.saltRounds, async function (err, hash) {
+    bcrypt.hash(password, salt, async function (err, hash) {
       if (err) {
-        console.log(err);
+        console.log(err)
         res.status(400);
         res.send("something went wrong");
       } else {
@@ -28,7 +28,6 @@ userRoute.post("/user/signup", async (req, res) => {
           password: hash,
         });
         await userRegisterData.save();
-        console.log(email);
         let sub = `Welcome to API ACE`;
         let body = `Dear ${name},
 
@@ -40,12 +39,14 @@ userRoute.post("/user/signup", async (req, res) => {
                 
                 Best regards,
                 API ACE`;
-        sendMail(sub, body, email);
+        // sendMail(sub, body, email);
         res.send("user registered");
       }
     });
   }
 });
+
+
 
 userRoute.post("/user/login", async (req, res) => {
   const { email, password } = req.body;

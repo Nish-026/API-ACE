@@ -1,14 +1,3 @@
-document.querySelector(".gbtn").addEventListener("click", auth);
-document.querySelector(".gitbtn").addEventListener("click", gitauth);
-
-async function auth() {
-  window.location = "http://localhost:4500/auth/google";
-}
-
-async function gitauth() {
-  window.location =
-    "https://github.com/login/oauth/authorize?client_id=c650422230378f44fe50&scope=user:email&scope=repo";
-}
 
 let register = async () => {
   try {

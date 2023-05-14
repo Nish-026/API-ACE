@@ -18,10 +18,12 @@ if (username == null) {
                 logout
               </button>`;
   // logout function
-  document.querySelector("#logout_btn").addEventListener("click", () => {
+document.querySelector("#logout_btn").addEventListener("click", () => {
     logout()
     localStorage.removeItem("username");
-    window.location.href = "index.html";
+    setTimeout(()=>{
+      window.location.href = "index.html";
+    },2000)
   });
 }
 
@@ -32,10 +34,11 @@ async function logout() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        authorization: localStorage.getItem("token"),
+         authorization: localStorage.getItem("token"),
       },
     }
   );
+  console.log(logout);
   if (logout.status == 200) {
     Swal.fire("Successfully Logged out😁")
   }else{

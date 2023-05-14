@@ -10,7 +10,7 @@ const passport = require("../config/google_oauth");
 const saltRounds=8
 const salt = bcrypt.genSaltSync(saltRounds);
 
-userRoute.post("/user/signup", async (req, res) => {
+userRoute.post("/signup", async (req, res) => {
   const { name, email, password } = req.body;
   let userData = await userModel.find({ email });
   if (userData.length > 0) {

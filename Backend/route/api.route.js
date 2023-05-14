@@ -1,10 +1,8 @@
 const express = require("express");
 let apiRoute = express.Router();
-
-let {authenticate}=require("../middleware/authenticate.middleware");
 const { apiModel } = require("../model/api_model");
 
-apiRoute.get("/getUserApi/:id", authenticate,async (req, res) => {
+apiRoute.get("/getUserApi/:id",async (req, res) => {
   let id = req.params.id;
   try {
     let userApiData = await apiModel.find({
@@ -17,7 +15,7 @@ apiRoute.get("/getUserApi/:id", authenticate,async (req, res) => {
   }
 });
 
-apiRoute.post("/saveUserApi", authenticate,async (req, res) => {
+apiRoute.post("/saveUserApi",async (req, res) => {
   let payload = req.body;
   try {
     let userApi = await apiModel(payload);
@@ -29,7 +27,7 @@ apiRoute.post("/saveUserApi", authenticate,async (req, res) => {
   }
 });
 
-apiRoute.delete("/delete/:id",authenticate,async(req,res)=>{
+apiRoute.delete("/delete/:id",async(req,res)=>{
   let id= req.params.id;
   try{
     await apiModel.findByIdAndDelete(id)

@@ -1,7 +1,6 @@
 const express = require("express");
 var cors = require("cors");
 require("dotenv").config();
-
 const port = process.env.port;
 const { connection } = require("./config/config");
 const { userRoute } = require("./route/user.route");

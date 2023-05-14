@@ -35,7 +35,6 @@ html::-webkit-scrollbar-thumb {
 }
 #Navbar {
   position: fixed;
-  /* border: 1px solid green; */
   z-index: 9000;
   width: 100%;
   align-items: center;
@@ -50,7 +49,6 @@ html::-webkit-scrollbar-thumb {
 }
 
 .container-fluid {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +67,6 @@ html::-webkit-scrollbar-thumb {
 }
 #first_div > div {
   width: 20px;
-  /* border: 1px solid green; */
 }
 .container-fluid > div:nth-child(1) {
   width: 10%;
@@ -83,7 +80,6 @@ html::-webkit-scrollbar-thumb {
 }
 
 .container-fluid > div {
-  /* border: 1px solid rgb(0, 255, 17); */
   align-items: center;
   align-self: center;
 }
@@ -254,10 +250,8 @@ input:checked + label svg.moon {
     text-align: center;
     transition: 0.3s;
     background-color: white;
-    /* border: 1px solid red; */
   }
   .container-fluid > div {
-    /* border: 1px solid green; */
     margin: auto;
   }
   #search_div {
@@ -272,12 +266,10 @@ input:checked + label svg.moon {
   #img_div {
     width: 30%;
     margin: auto;
-    /* border:1px solid green; */
   }
   #first_div {
     margin-top: -20px;
     display: block;
-    /* border: 1px solid red; */
     margin: auto;
   }
   #first_div > div {
@@ -413,11 +405,9 @@ input:checked + label svg.moon {
 }
 #first_row > div:nth-child(1) {
   width: 30%;
-  /* border:1px solid green; */
 }
 #first_row > div:nth-child(2) {
   width: 65%;
-  /* border:1px solid green; */
 }
 #first_row > div:nth-child(2) > img {
   width: 100%;
@@ -441,7 +431,6 @@ input:checked + label svg.moon {
   font-weight: 600;
   line-height: 40px;
   color: rgb(33, 33, 33);
-  /* margin-left: -30px; */
   word-break: normal;
   color: #000;
   display: block;
@@ -464,7 +453,6 @@ input:checked + label svg.moon {
   text-align: justify;
 }
 #email_div_1 {
-  /* border: 1px solid red; */
   display: flex;
 }
 
@@ -502,7 +490,6 @@ input:checked + label svg.moon {
   padding-bottom: 100px;
 }
 #second_row_1_div {
-  /* border:1px solid red; */
   width: 90%;
   margin: auto;
   display: flex;
@@ -510,7 +497,6 @@ input:checked + label svg.moon {
 }
 #second_row_1_div > div {
   width: 50%;
-  /* border:1px solid green; */
   margin-top: 80px;
 }
 #second_row_1_div > div:nth-child(2) {
@@ -585,7 +571,6 @@ input:checked + label svg.moon {
 
 #third_row {
   width: 70%;
-  /* border:1px solid red; */
   margin: auto;
   margin-top: 50px;
 }
@@ -639,7 +624,6 @@ input:checked + label svg.moon {
 .carousel {
   width: 40%;
   height: 300px;
-  /* border:1px solid red; */
 }
 .card-body {
   width: 400px;
@@ -744,13 +728,11 @@ input:checked + label svg.moon {
 }
 /***************************************************************** Footer **************************************************************************************************/
 #footer {
-  /* border:1px solid red; */
   display: flex;
   margin-top: 20px;
   justify-content: space-between;
 }
 #footer > div {
-  /* border: 1px solid green; */
   padding: 50px;
 }
 #footer > div:nth-child(1) {
@@ -823,6 +805,5 @@ input:checked + label svg.moon {
   margin-bottom: 12px !important;
 }
 #f_2_div > div {
-  /* border: 1px solid red; */
   width: 20%;
 }

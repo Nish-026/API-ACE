@@ -28,8 +28,9 @@ authRoute.get(
         const token = jwt.sign({
             userID: user._id,
             username:user.name
+
         },process.env.secret, { expiresIn: '24hr' });
-        res.redirect(`https://apiwizard.netlify.app/dashboard.html?username=${user.name}&userId=${user._id}&token=${token}`); // chnge the link to frontend
+        res.redirect(`https://apiwizard.netlify.app/dashboard.html?username=${user.name}&userID=${user._id}&token=${token}`); // chnge the link to frontend
     }
 );
 
@@ -57,7 +58,7 @@ passport.use(
             const user = new userModel({
                 name,
                 email,
-                pass: uuidv4(),
+                password: uuidv4(),
             });
             await user.save();
             return cb(null, user);
@@ -83,7 +84,7 @@ authRoute.get(
             userID: user._id
         }, 'token', { expiresIn: '24hr' });
         console.log(token);
-        res.redirect(`https://apiwizard.netlify.app/index.html`);
+        res.redirect(`https://apiwizard.netlify.app/dashboard.html?username=${user.name}&userID=${user._id}&token=${token}`);
     }
 );
 
@@ -111,7 +112,7 @@ passportGithub.use(
             const user = new userModel({
                 name,
                 email,
-                pass: uuidv4(),
+                password: uuidv4(),
             });
             await user.save();
             return done(null, user);

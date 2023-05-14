@@ -6,7 +6,7 @@ document.querySelector("#submit").addEventListener("click", () => {
   mail = document.querySelector("#otpemail").value;
   password = document.querySelector("#pass").value;
   if (mail == "" || password == "") {
-    alert("Fill the all details");
+    Swal.fire("Fill the all details");
   } else {
     let otp = async () => {
       try {
@@ -14,7 +14,7 @@ document.querySelector("#submit").addEventListener("click", () => {
           email: mail,
         };
 
-        await fetch("http://localhost:4500/otp", {
+        await fetch("http://localhost:4500/user/otp", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -25,10 +25,10 @@ document.querySelector("#submit").addEventListener("click", () => {
             const data = await result.json();
             if (data.ok) {
               otpval = data.message;
-              alert(`OTP is - ${data.message}`);
+              Swal.fire(`OTP is - ${data.message}`);
               document.querySelector("#otp").style.display = "block";
             } else {
-              alert(data.message);
+              Swal.fire(data.message);
             }
           })
           .catch((err) => {
@@ -47,12 +47,12 @@ document.querySelector("#submit").addEventListener("click", () => {
 document.querySelector("#ok").addEventListener("click", () => {
   const paaskey = document.querySelector("#val").value;
   if (paaskey == "") {
-    alert("Enter Correct OTP");
+    Swal.fire("Enter Correct OTP");
   } else if (otpval == paaskey) {
-    alert("OTP Verified");
+    Swal.fire("OTP Verified");
     window.location.href = "setPassword.html";
   } else {
-    alert("Wrong OTP");
+    Swal.fire("Wrong OTP");
   }
 });
 

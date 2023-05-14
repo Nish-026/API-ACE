@@ -14,7 +14,7 @@ document.querySelector("#setsubmit").addEventListener("click", async () => {
           password,
         };
 
-        await fetch("http://localhost:4500/reset", {
+        await fetch("http://localhost:4500/user/reset", {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",
@@ -24,10 +24,10 @@ document.querySelector("#setsubmit").addEventListener("click", async () => {
           .then(async (result) => {
             const data = await result.json();
             if (data.ok) {
-              alert(`${data.message}`);
+              Swal.fire(`${data.message}`);
               window.location.href = "./login.html";
             } else {
-              alert(data.message);
+              Swal.fire(data.message);
             }
           })
           .catch((err) => {

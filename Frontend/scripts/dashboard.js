@@ -15,6 +15,6 @@ console.log(token);
 localStorage.setItem("token",token);
 localStorage.setItem("userID",id);
 localStorage.setItem("username", userName);
-if(username){
+if(userName){
     window.location.href="index.html"
 }

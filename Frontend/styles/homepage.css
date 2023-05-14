@@ -1,45 +1,14 @@
-/* #homepage_div {
-  display: flex;
-  width: 30%;
-  align-items: center;
-  justify-content: space-between;
-}
-#homepage_div > div {
-  width: 30%;
-  text-align: center;
-  height: 100%;
-}
-#Navbar {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-.logout {
-  margin-bottom: -8px;
-}
-#logout_btn {
-  width: 100%;
-  background-color: orange;
-  padding: 2px;
-  border-radius: 4px;
-}
-#logout_btn > p {
-  margin-bottom: 10px;
-  font-size: 14px;
-  align-self: center;
-} */
+
 #main{
   width:100%;
 }
 #main_body_div {
-  /* border:1px solid red; */
   width: 80%;
   margin: auto;
   margin-top: 120px;
   display: flex;
   justify-content: space-between;
 }
-/* #main_body_div > div {
-  border:1px solid rgb(0, 0, 0);
-} */
 
 #main_body_div > div:nth-child(1) {
   width: 400px;

@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 
 
-app.use(userRoute);
+app.use("/user",userRoute);
 app.use("/auth", authRoute);
 app.use(authenticate);
 app.use("/Api",apiRoute);

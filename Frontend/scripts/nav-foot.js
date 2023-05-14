@@ -19,9 +19,28 @@ if (username == null) {
               </button>`;
   // logout function
   document.querySelector("#logout_btn").addEventListener("click", () => {
-    localStorage.setItem("username", null);
+    logout()
+    localStorage.removeItem("username");
     window.location.href = "index.html";
   });
+}
+
+async function logout() {
+  let logout = await fetch(
+    `http://localhost:4500/user/logout`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: localStorage.getItem("token"),
+      },
+    }
+  );
+  if (logout.status == 200) {
+    Swal.fire("Successfully Logged out😁")
+  }else{
+    Swal.fire("Something went wrong😥")
+  }
 }
 
 document.querySelector("#logo_img").addEventListener("click", () => {
@@ -36,7 +55,6 @@ let workspace_button= document.getElementById("workspace_btn")
 
 workspace_button.addEventListener("click",()=>{
   if(username!=null){
-    console.log("hi")
     window.location.href= "homepage.html"
   }else{
     Swal.fire("Please Login to get to your workspace🤗")

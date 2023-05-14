@@ -9,6 +9,7 @@ const { userModel } = require("../model/user.model");
 const passport = require("../config/google_oauth");
 const saltRounds=8
 const salt = bcrypt.genSaltSync(saltRounds);
+
 userRoute.post("/user/signup", async (req, res) => {
   const { name, email, password } = req.body;
   let userData = await userModel.find({ email });
@@ -48,7 +49,7 @@ userRoute.post("/user/signup", async (req, res) => {
 
 
 
-userRoute.post("/user/login", async (req, res) => {
+userRoute.post("/login", async (req, res) => {
   const { email, password } = req.body;
   let userData = await userModel.find({ email });
   if (userData.length > 0) {
@@ -77,14 +78,14 @@ userRoute.post("/user/login", async (req, res) => {
 });
 
 
-userRoute.post("/user/logout", async (req, res) => {
+userRoute.post("/logout",async (req, res) => {
   const token = req.headers.authorization;
   const blackListData = JSON.parse(
     fs.readFileSync("blacklist.token.json", "utf-8")
   );
   blackListData.push(token);
   fs.writeFileSync("blacklist.token.json", JSON.stringify(blackListData));
-  res.send("logout successful");
+  res.status(200).send("logout successful");
 });
 
 userRoute.post("/otp", async (req, res) => {

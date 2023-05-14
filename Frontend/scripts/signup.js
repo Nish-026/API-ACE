@@ -1,4 +1,5 @@
 
+const URL="https://elegant-moth-zipper.cyclic.app"
 let register = async () => {
   try {
     let name = document.querySelector("#username").value;
@@ -15,7 +16,7 @@ let register = async () => {
       password,
     };
 
-    await fetch("http://localhost:4500/user/signup", {
+    await fetch(`${URL}/user/signup`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

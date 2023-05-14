@@ -1,7 +1,6 @@
 const express = require("express");
 var cors = require("cors");
 require("dotenv").config();
-
 const port = process.env.port;
 const { connection } = require("./config/config");
 const { userRoute } = require("./route/user.route");
@@ -14,9 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("welcome to apiace");
-});
-
+  try {
+    res.send({ "ok": true, "msg": "Welcome to APIACE" });
+  } catch (error) {
+    res.send({ "ok": false, "msg": error.message })
+  }
+})
 
 
 

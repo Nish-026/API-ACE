@@ -4,14 +4,12 @@ const sendMail = async (subject, body, userMail) => {
   try {
     let testAccount = await nodemailer.createTestAccount();
 
-
-
     const transporter = nodemailer.createTransport({
       host: 'smtp-relay.sendinblue.com',
       port: 587,
       auth: {
-        user: process.env.NODEMAILER.USERNAME,
-        pass: process.env.NODEMAILER.PASSWORD
+        user: process.env.NODEMAILER_USERNAME,
+        pass: process.env.NODEMAILER_PASSWORD
       },
       tls: {
         rejectUnauthorized: false

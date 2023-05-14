@@ -29,7 +29,7 @@ authRoute.get(
             userID: user._id,
             username:user.name
         },process.env.secret, { expiresIn: '24hr' });
-        res.redirect(`https://apiwizard.netlify.app/index.html?username=${user.name}&userId=${user._id}&token=${token}`); // chnge the link to frontend
+        res.redirect(`https://apiwizard.netlify.app/dashboard.html?username=${user.name}&userId=${user._id}&token=${token}`); // chnge the link to frontend
     }
 );
 

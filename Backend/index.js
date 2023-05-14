@@ -14,9 +14,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("welcome to apiace");
-});
-
+  try {
+    res.send({ "ok": true, "msg": "Welcome to APIACE" });
+  } catch (error) {
+    res.send({ "ok": false, "msg": error.message })
+  }
+})
 
 
 

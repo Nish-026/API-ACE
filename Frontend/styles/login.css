@@ -6,8 +6,12 @@
   --hoverorange: rgb(170, 45, 0);
   --background: white;
 }
-
+.cont{
+  border: 1px solid red;
+  margin-top:-100px;
+}
 .part {
+
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 65%;
   margin: auto;
@@ -15,6 +19,8 @@
   background-color: white;
   display: flex;
   justify-content: space-between;
+  margin-bottom:80px;
+  margin-top:20px;
 }
 
 p,li{

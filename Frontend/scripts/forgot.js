@@ -14,7 +14,7 @@ document.querySelector("#submit").addEventListener("click", () => {
           email: mail,
         };
 
-        await fetch("http://localhost:4500/user/otp", {
+        await fetch(`${URL}/user/otp`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",

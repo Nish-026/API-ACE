@@ -26,7 +26,7 @@ document.querySelector("#logout_btn").addEventListener("click", () => {
 
 async function logout() {
   let logout = await fetch(
-    `${URL}/user/logout`,
+    "https://elegant-moth-zipper.cyclic.app/user/logout",
     {
       method: "POST",
       headers: {
@@ -35,6 +35,7 @@ async function logout() {
       },
     }
   );
+  console.log(logout)
   if (logout.status == 200) {
     localStorage.removeItem("username");
     Swal.fire("Successfully Logged out😁")
@@ -49,9 +50,7 @@ async function logout() {
 document.querySelector("#logo_img").addEventListener("click", () => {
   window.location.href = "index.html";
 });
-document.querySelector("#explore").addEventListener("click", () => {
-  window.location.href = "explore.html";
-});
+
 
 
 let workspace_button= document.getElementById("workspace_btn")

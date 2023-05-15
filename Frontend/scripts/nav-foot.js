@@ -1,4 +1,4 @@
-const URL="https://elegant-moth-zipper.cyclic.app"
+
 let username = localStorage.getItem("username");
 let sign_in_div = document.querySelector("#sign_in_div");
 if (username == "null") {
@@ -21,6 +21,12 @@ if (username == null) {
   // logout function
 document.querySelector("#logout_btn").addEventListener("click", () => {
     logout()
+    localStorage.removeItem("username");
+    Swal.fire("Successfully Logged out😁")
+    setTimeout(()=>{
+      window.location.href = "index.html";
+    },2000)
+
   });
 }
 
@@ -35,16 +41,6 @@ async function logout() {
       },
     }
   );
-  console.log(logout)
-  if (logout.status == 200) {
-    localStorage.removeItem("username");
-    Swal.fire("Successfully Logged out😁")
-    setTimeout(()=>{
-      window.location.href = "index.html";
-    },2000)
-  }else{
-    Swal.fire("Something went wrong😥")
-  }
 }
 
 document.querySelector("#logo_img").addEventListener("click", () => {

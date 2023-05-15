@@ -21,10 +21,6 @@ if (username == null) {
   // logout function
 document.querySelector("#logout_btn").addEventListener("click", () => {
     logout()
-    localStorage.removeItem("username");
-    setTimeout(()=>{
-      window.location.href = "index.html";
-    },2000)
   });
 }
 
@@ -39,9 +35,13 @@ async function logout() {
       },
     }
   );
-  console.log(logout);
   if (logout.status == 200) {
+
     Swal.fire("Successfully Logged out😁")
+    localStorage.removeItem("username");
+    setTimeout(()=>{
+      window.location.href = "index.html";
+    },2000)
   }else{
     Swal.fire("Something went wrong😥")
   }

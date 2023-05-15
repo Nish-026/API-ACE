@@ -26,7 +26,7 @@ let register = async () => {
       .then(async (result) => {
         const data = await result.text();
         if (result.status == 200) {
-          alert(data);
+         Swal .fire("Successfully registered😍")
           window.location.href = "./login.html";
         } else {
           alert(data);
@@ -34,7 +34,7 @@ let register = async () => {
       })
       .catch((err) => {
         console.log(err);
-        alert(data);
+        Swal.fire("Something went wrong😥")
       });
   } catch (err) {
     console.log(err);

@@ -1,4 +1,5 @@
-// ----------------------------------------------------------------------------
+
+const URL="https://elegant-moth-zipper.cyclic.app"
 
 let logindata = async () => {
     const email = document.querySelector("#logmail").value;
@@ -12,7 +13,7 @@ let logindata = async () => {
       password,
     };
   
-    const fetchedData = await fetch("http://localhost:4500/user/login", {
+    const fetchedData = await fetch(`${URL}/user/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

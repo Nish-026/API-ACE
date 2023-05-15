@@ -1,3 +1,4 @@
+const URL="https://elegant-moth-zipper.cyclic.app"
 let username = localStorage.getItem("username");
 let sign_in_div = document.querySelector("#sign_in_div");
 if (username == "null") {
@@ -29,7 +30,7 @@ document.querySelector("#logout_btn").addEventListener("click", () => {
 
 async function logout() {
   let logout = await fetch(
-    `http://localhost:4500/user/logout`,
+    `${URL}/user/logout`,
     {
       method: "POST",
       headers: {

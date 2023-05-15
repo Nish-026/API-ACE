@@ -1,3 +1,4 @@
+const URL="https://elegant-moth-zipper.cyclic.app"
 document.querySelector("#setsubmit").addEventListener("click", async () => {
     let email = document.querySelector("#setemail").value;
     let password = document.querySelector("#setpass").value;
@@ -14,7 +15,7 @@ document.querySelector("#setsubmit").addEventListener("click", async () => {
           password,
         };
 
-        await fetch("http://localhost:4500/user/reset", {
+        await fetch(`${URL}/user/reset`, {
           method: "PATCH",
           headers: {
             "Content-type": "application/json",

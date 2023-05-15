@@ -73,7 +73,7 @@ function displayApi(data) {
 
 async function remove_api(ID) {
   fetchData = await fetch(
-    `${URL}/Api/delete/${ID}`,
+    `https://elegant-moth-zipper.cyclic.app/Api/delete/${ID}`,
     {
       method: "DELETE",
       headers: {

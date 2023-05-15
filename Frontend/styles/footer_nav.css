@@ -318,7 +318,6 @@ input:checked + label svg.moon {
 }
 #signin_btn {
   border-radius: 2px;
-  border: 1px solid grey;
   width: 100%;
   margin: auto;
   margin-left: 10%;

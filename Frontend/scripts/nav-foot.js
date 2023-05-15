@@ -36,9 +36,8 @@ async function logout() {
     }
   );
   if (logout.status == 200) {
-
-    Swal.fire("Successfully Logged out😁")
     localStorage.removeItem("username");
+    Swal.fire("Successfully Logged out😁")
     setTimeout(()=>{
       window.location.href = "index.html";
     },2000)

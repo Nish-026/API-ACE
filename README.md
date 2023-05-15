@@ -4,10 +4,14 @@
 # Introducing API-ACE  (Clone of Postman.com)
 - Deployed WebSite Link = https://apiwizard.netlify.app
 - Deployed Backend URL  = https://elegant-moth-zipper.cyclic.app
+---
+
 !![API ACE LOGO](https://github.com/Nish-026/APIwizard/assets/115637679/819e8ef2-0d38-449d-bed9-7fe06267463e)
+
+---
 The API ACE is the foundational tool of Postman, and it enables you to easily explore, debug, and test your APIs while also enabling you to define complex API requests for HTTP, REST, SOAP, GraphQL, and WebSockets.The API client automatically detects the language of the response, links, and format text inside the body to make inspection easy.Through the API client, you can organize requests into Postman Collections to help you organize your requests for reuse so you don't waste time building everything from scratch.
 
-
+---
 ## Team members
 
 - [Nishtha]
@@ -87,6 +91,8 @@ The API ACE is the foundational tool of Postman, and it enables you to easily ex
 
 ### 🔶: Workspace :-
 ## ![API-ACE Workspace Page]<img width="959" alt="Screenshot 2023-05-15 130956" src="https://github.com/Nish-026/APIwizard/assets/115637679/e68da6a7-aa9d-43d3-ba51-efc8d8177d37">
+---
+## Thankyou for your Time :raised_hands: 💝 :-
 
 ### 🔶: Main Working page :-
 ## ![API-ACE Apirequest Page]<img width="945" alt="Screenshot 2023-05-15 131151" src="https://github.com/Nish-026/APIwizard/assets/115637679/a385ab85-be65-4802-945e-145d841f5006">

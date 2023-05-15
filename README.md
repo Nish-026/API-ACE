@@ -6,7 +6,7 @@
 - Deployed Backend URL  = https://elegant-moth-zipper.cyclic.app
 
 
-(https://github.com/Nish-026/APIwizard/assets/115637679/819e8ef2-0d38-449d-bed9-7fe06267463e)
+!(https://github.com/Nish-026/APIwizard/assets/115637679/819e8ef2-0d38-449d-bed9-7fe06267463e)
 
 The API ACE is the foundational tool of Postman, and it enables you to easily explore, debug, and test your APIs while also enabling you to define complex API requests for HTTP, REST, SOAP, GraphQL, and WebSockets.The API client automatically detects the language of the response, links, and format text inside the body to make inspection easy.Through the API client, you can organize requests into Postman Collections to help you organize your requests for reuse so you don't waste time building everything from scratch.
 

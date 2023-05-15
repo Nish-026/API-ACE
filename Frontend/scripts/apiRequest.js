@@ -1,4 +1,4 @@
-const URL="https://elegant-moth-zipper.cyclic.app"
+
 // requestTabs onclick function
 
 let noneBtn = document.querySelector("#noneBtn");
@@ -392,7 +392,7 @@ saveApiBtn.addEventListener("click", async () => {
     url: url,
   };
   if (method || url) {
-    fetchURL = await fetch(`${URL}/Api/saveUserApi`, {
+    fetchURL = await fetch("https://elegant-moth-zipper.cyclic.app/Api/saveUserApi", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

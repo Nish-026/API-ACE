@@ -1,4 +1,4 @@
-const URL="https://elegant-moth-zipper.cyclic.app"
+
 // let username= localStorage.getItem("userID");
 let new_req = document.getElementById("new_req");
 new_req.addEventListener("click", () => {
@@ -24,7 +24,7 @@ function logout() {
 
 async function getApiData() {
   fetchData = await fetch(
-    `${URL}/Api/getUserApi/${localStorage.getItem("userID")}`,
+    `https://elegant-moth-zipper.cyclic.app/Api/getUserApi/${localStorage.getItem("userID")}`,
     {
       method: "GET",
       headers: {

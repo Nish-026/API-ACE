@@ -25,7 +25,7 @@ document.querySelector("#logout_btn").addEventListener("click", () => {
     Swal.fire("Successfully Logged out😁")
     setTimeout(()=>{
       window.location.href = "index.html";
-    },2000)
+    },5000)
 
   });
 }

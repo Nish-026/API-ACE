@@ -40,9 +40,9 @@ let logindata = async () => {
 
 
 google_button.addEventListener("click", ()=>{
-    window.location.href = "http://localhost:4500/auth/google/"
+    window.location.href = `${URL}/auth/google/`
 })
 
 github_button.addEventListener("click", ()=>{
-    window.location.href = "http://localhost:4500/auth/github/"
+    window.location.href = `${URL}/auth/github/`
 })
